@@ -1,5 +1,8 @@
 body{
     background-image: url("blue.jpg");
+    font-family: 'Poppins', sans-serif;
+}
+
  }
 /* CONTACT PAGE WRAPPER */
 .contact-page {
@@ -177,13 +180,17 @@ body{
     border: 2px solid #888;
 }
 
-.placeholder-text {
-    width: 80%;
-    height: 12px;
-    background: #d9d9d9;
-    margin-bottom: 10px;
-    border-radius: 5px;
+.text-bg {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
 /* OB: custom placeholders matching wireframes */
 .page-header {
             text-align: center;

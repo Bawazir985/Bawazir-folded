@@ -19,7 +19,7 @@
 </head>
 
 <body>
- <!-- NAVIGATION -->
+ <!-- NAVIGATION Omar Bawazir-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="index.html">Clean Water & Sanitation</a>
@@ -45,6 +45,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="contacts.html">Contacts</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="about.html">About</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -66,13 +69,12 @@
                 <div class="p-4 border rounded shadow-sm bg-white">
                     <h3>Our Information</h3>
 
-                    <p><strong>Email:</strong><br> info@example.com</p>
-                    <p><strong>Phone:</strong><br> (555) 123-4567</p>
-                    <p><strong>Address:</strong><br> 123 Web St, Design City</p>
+                   <p><strong>Email:</strong><br> x25543539@student.ncirl.ie</p>
+                    <p><strong>Phone:</strong><br> (+353) 0214251828</p>
+                    <p><strong>Address:</strong><br> 1 Mayor Street Lower, Dublin 1, D01 K6W2, Ireland</p>
 
                     <p class="mt-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Quisque faucibus ex sapien vitae pellentesque.
+                        clean water and sanitation contacts
                     </p>
                 </div>
             </div>
@@ -96,7 +98,39 @@
             </div>
 
         </div>
+        <script>
+            function validateForm() {
+                const name = document.getElementById('name');
+                const email = document.getElementById('email');
+                const message = document.getElementById('message');
+
+            // Name
+            if (name.value.trim() === "") {
+            alert("Please enter your name.");
+            return false;
+            }
+
+            // Email format
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.value.match(emailPattern)) {
+            alert("Please enter a valid email address.");
+            return false;
+            }
+
+            // Message
+            if (message.value.trim() === "") {
+            alert("Please enter a message.");
+            return false;
+            }
+
+            // Passed all checks
+            alert("Form submitted successfully!");
+            return true;
+            }
+</script>
+       
     </main>
+
 	 
 
     <!-- BOOTSTRAP JS -->
