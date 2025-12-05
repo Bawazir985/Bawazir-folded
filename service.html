@@ -94,7 +94,89 @@ We also support hygiene awareness programmes that teach families how to keep the
 
 </div>
 </div>
+<!-- OB: Booking Form -->
+<div class="container my-5">
+    <h2 class="text-center mb-3">Book a Service</h2>
 
+    <form id="simpleForm" class="p-4 bg-light rounded shadow">
+
+        <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" id="simpleName" class="form-control">
+            <small id="nameErr" class="text-danger d-none">Name is required.</small>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="text" id="simpleEmail" class="form-control">
+            <small id="emailErr" class="text-danger d-none">Enter a valid email.</small>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Select a Service</label>
+            <select id="simpleService" class="form-select">
+                <option value="">-- Choose --</option>
+                <option value="Water Treatment">Water Treatment</option>
+                <option value="Sanitation Support">Sanitation Support</option>
+                <option value="Hygiene Awareness">Hygiene Awareness</option>
+            </select>
+            <small id="serviceErr" class="text-danger d-none">Please choose a service.</small>
+        </div>
+
+        <button type="button" onclick="simpleValidate()" class="btn btn-primary w-100">Submit</button>
+
+        <p id="simpleSuccess" class="text-success text-center mt-3 d-none">
+            Booking submitted successfully!
+        </p>
+    </form>
+</div>
+<script>
+function simpleValidate() {
+    let valid = true;
+
+    let name = document.getElementById("simpleName");
+    let email = document.getElementById("simpleEmail");
+    let service = document.getElementById("simpleService");
+
+    let nameErr = document.getElementById("nameErr");
+    let emailErr = document.getElementById("emailErr");
+    let serviceErr = document.getElementById("serviceErr");
+    let success = document.getElementById("simpleSuccess");
+
+    // Reset
+    nameErr.classList.add("d-none");
+    emailErr.classList.add("d-none");
+    serviceErr.classList.add("d-none");
+    success.classList.add("d-none");
+
+    // NAME CHECK
+    if (name.value.trim() === "") {
+        nameErr.classList.remove("d-none");
+        valid = false;
+    }
+
+    // EMAIL CHECK
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.value.match(emailPattern)) {
+        emailErr.classList.remove("d-none");
+        valid = false;
+    }
+
+    // SERVICE CHECK
+    if (service.value === "") {
+        serviceErr.classList.remove("d-none");
+        valid = false;
+    }
+
+    // SUCCESS
+    if (valid) {
+        success.classList.remove("d-none");
+        name.value = "";
+        email.value = "";
+        service.value = "";
+    }
+}
+</script>
 
 <footer class="text-center py-4 bg-light border-top">
         <p>&copy; 2025 Your Company Name. All rights reserved.</p>
